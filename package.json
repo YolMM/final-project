@@ -1,0 +1,20 @@
+{
+  "name": "proyecto2",
+  "version": "1.0.0",
+  "description": "<p style=\"text-align:center;\"> \t<img src=\"api/public/1794.jpg\" alt=\"logo\" width=\"150\"/> </p>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YolMM/final-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YolMM/final-project/issues"
+  },
+  "homepage": "https://github.com/YolMM/final-project#readme"
+}

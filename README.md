@@ -1,10 +1,14 @@
 # FINAL PROJECT
 
+<p style="text-align:center;">
+	<img src="api/public/1794.jpg" alt="logo" width="150"/>
+</p>
+
 ##  <a name='Tableofcontents'></a>Table of contents
 
 <!-- vscode-markdown-toc -->
  1. [ Introduction](#Introduction)
- 2. [ Installation manual](#Installationmanual)
+ 2. [ Motivation](#Motivation)
  3. [ Packages and dependencies](#Packagesanddependencies)
  4. [ Structure](#Structure)
  5. [ Documentation](#Documentation)
@@ -21,33 +25,61 @@
 
 This is my final project for [CORE Code School](https://www.corecode.school/).
 
-Everyone knows the famous photographer [John Doe](https://en.wikipedia.org/wiki/John_Doe), so here it is his [website]().
+Everyone knows the famous photographer [John Doe](https://en.wikipedia.org/wiki/John_Doe), so here it is his [website](). There you will be able to find some information about him, his work, reviews from other customers, prices and even make an appointment to discuss anything you need with John Doe.
 
-##  2. <a name='Installationmanual'></a> Installation manual
+##  2. <a name='Motivation'></a> Motivation
 
-```bash
-#Clone the repository:
-git clone https://github.com/YolMM/final-project
+My sister is a photographer. When I started this bootcamp, she used to joke about I would do a website for her work as soon as I could. So I took it seriously, but first I wanted to do a beta version. If this works properly, I could have free photos for the rest of my life, so I'm all in 😼
 
-#Initiate npm:
-npm init
-#Or use this instead:
-npm init -y
+##  3. <a name='Structure'></a> Structure
 
-#Install dependencies:
-npm install
+The project is a monorepo and its structure is:
 
-#Execute the project:
-npm run dev
+```
+final-project
+    │
+    |   packages
+	|    ├── front
+    │    |    ├── ...
+    │    |    └── package.json
+	|    |
+    |    └── api
+    |         ├── ...
+    |         └── package.json
+    │
+    ├── .gitignore
+    ├── .eslintrc.json
+    ├── package.json
+    ├── lerna.json
+    └── README.md
 ```
 
-##  3. <a name='Packagesanddependencies'></a> Packages and dependencies
+##  4. <a name='Packagesanddependencies'></a> Packages and dependencies
 
-##  4. <a name='Structure'></a> Structure
+| Front      | Api          | All           |
+| ---------- | -------------| --------------|
+| axios      | auth0        | eslint        |
+| next.js    | dotenv       | lerna         |
+| parcel     | fastify      | npm           |
+| react      | mongoose     | typescript    |
+|            | nodemon      |               |
+|            | pino         |               |
+|            | pino-pretty  |               |
+|            | ts-node      |               |
 
 ##  5. <a name='Documentation'></a> Documentation
 
+- [Auth0](https://auth0.com/)
+- [Next.js](https://nextjs.org/)
+- [React](https://es.reactjs.org/)
+- [Freepik](https://www.freepik.es/)
+- []()
+
 ##  6. <a name='Acknowledgements'></a> Acknowledgements
+
+To the people of CORE Code School, specially my teacher Marcos and all my colleagues, for doing this possible.
+
+To my sister for motivate this project.
 
 ##  7. <a name='License'></a> License
 
