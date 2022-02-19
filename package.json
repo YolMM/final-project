@@ -1,7 +1,7 @@
 {
   "name": "proyecto2",
   "version": "1.0.0",
-  "description": "<p style=\"text-align:center;\"> \t<img src=\"api/public/1794.jpg\" alt=\"logo\" width=\"150\"/> </p>",
+  "description": "<p style=\"text-align:center;\"> \t<img src=\"packages/api/public/1794.jpg\" alt=\"logo\" width=\"150\"/> </p>",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -16,5 +16,16 @@
   "bugs": {
     "url": "https://github.com/YolMM/final-project/issues"
   },
-  "homepage": "https://github.com/YolMM/final-project#readme"
+  "homepage": "https://github.com/YolMM/final-project#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0"
+  }
 }

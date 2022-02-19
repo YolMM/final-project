@@ -1,0 +1,25 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/server.ts",
+    "seed": "nodemon src/scripts/seed.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/pino": "^7.0.5",
+    "dotenv": "^16.0.0",
+    "fastify": "^3.27.2",
+    "fastify-cors": "^6.0.2",
+    "mongoose": "^6.2.2",
+    "nodemon": "^2.0.15",
+    "pino": "^7.8.0",
+    "pino-pretty": "^7.5.1",
+    "ts-node": "^10.5.0"
+  }
+}

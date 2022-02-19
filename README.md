@@ -1,7 +1,7 @@
 # FINAL PROJECT
 
 <p style="text-align:center;">
-	<img src="api/public/1794.jpg" alt="logo" width="150"/>
+	<img src="packages/api/public/1794.jpg" alt="logo" width="150"/>
 </p>
 
 ##  <a name='Tableofcontents'></a>Table of contents
@@ -61,7 +61,8 @@ final-project
 | axios      | auth0        | eslint        |
 | next.js    | dotenv       | lerna         |
 | parcel     | fastify      | npm           |
-| react      | mongoose     | typescript    |
+| react      | fastify-cors | typescript    |
+|            | mongoose     |               |
 |            | nodemon      |               |
 |            | pino         |               |
 |            | pino-pretty  |               |
@@ -70,10 +71,10 @@ final-project
 ##  5. <a name='Documentation'></a> Documentation
 
 - [Auth0](https://auth0.com/)
+- [ESLint](https://eslint.org/docs/user-guide/getting-started)
 - [Next.js](https://nextjs.org/)
 - [React](https://es.reactjs.org/)
 - [Freepik](https://www.freepik.es/)
-- []()
 
 ##  6. <a name='Acknowledgements'></a> Acknowledgements
 
