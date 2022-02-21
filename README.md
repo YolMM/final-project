@@ -39,10 +39,10 @@ The project is a monorepo and its structure is:
 final-project
     │
     |   packages
-	|    ├── front
+    |    ├── front
     │    |    ├── ...
     │    |    └── package.json
-	|    |
+    |    |
     |    └── api
     |         ├── ...
     |         └── package.json
@@ -60,8 +60,8 @@ final-project
 | ---------- | -------------| --------------|
 | axios      | auth0        | eslint        |
 | next.js    | dotenv       | lerna         |
-| parcel     | fastify      | npm           |
-| react      | fastify-cors | typescript    |
+| parcel     | fastify      | typescript    |
+| react      | fastify-cors | yarn          |
 |            | mongoose     |               |
 |            | nodemon      |               |
 |            | pino         |               |
