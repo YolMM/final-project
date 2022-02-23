@@ -1,6 +1,6 @@
 # FINAL PROJECT
 
-<p style="text-align:center;">
+<p align="center">
 	<img src="packages/api/public/1794.jpg" alt="logo" width="150"/>
 </p>
 
@@ -9,8 +9,8 @@
 <!-- vscode-markdown-toc -->
  1. [ Introduction](#Introduction)
  2. [ Motivation](#Motivation)
- 3. [ Packages and dependencies](#Packagesanddependencies)
- 4. [ Structure](#Structure)
+ 3. [ Structure](#Structure)
+ 4. [ Packages and dependencies](#Packagesanddependencies)
  5. [ Documentation](#Documentation)
  6. [ Acknowledgements](#Acknowledgements)
  7. [ License](#License)
@@ -33,35 +33,114 @@ My sister is a photographer. When I started this bootcamp, she used to joke abou
 
 ##  3. <a name='Structure'></a> Structure
 
+This is just a regular photograper website, where the customer can find information about the studio and the photographer, some pictures of photographer's previous works, leave a review, see reviews from others customers, select a pack of photos or create their own pack and make an appointment.
+
+### 3.1. Repository
+
 The project is a monorepo and its structure is:
 
 ```
 final-project
     │
-    |   packages
-    |    ├── front
-    │    |    ├── ...
+    |   packages/
+    |    ├── api/
+    │    |    ├── public/
+    │    |    ├── src/
+    │    |    ├── routers/
+    │    |    ├── scripts/
+    │    |    ├── app.ts
+    │    |    ├── config.ts
+    │    |    ├── server.ts
     │    |    └── package.json
     |    |
-    |    └── api
-    |         ├── ...
+    |    └── front/
+    |         ├── pages/
     |         └── package.json
     │
-    ├── .gitignore
     ├── .eslintrc.json
-    ├── package.json
+    ├── .gitignore
     ├── lerna.json
-    └── README.md
+    ├── package.json
+    ├── README.md
+    └── tsconfig.json
 ```
+
+### 3.2. API
+
+* Models:
+
+    ```ts
+    Appointment: {
+        user: String,
+        email: String,
+        date: Date,
+    };
+
+    Photos: {
+        name: String,
+        images: Array<String>,
+    };
+
+    Prices: {
+        packName: String,
+        quantity: Number,
+        price: Number,
+        pricePerPhoto: Number,
+        size: String,
+        printed: Boolean,
+    };
+
+    Reviews: {
+        userName: String,
+        email: String,
+        profilePic: String,
+        comment: String,
+        rate: Number,
+    };
+    ```
+
+
+* CRUDs:
+    - Appointment:
+
+        |        |                  |                                 |
+        |--------|------------------|---------------------------------|
+        | GET    | /appointment     | Availability for an appointment |
+        | GET    | /appointment/:id | Details of the appointment      |
+        | POST   | /appointment/    | Make an appointment             |
+        | POST   | /appointment/:id | Update the appointment          |
+        | DELETE | /appointment/:id | Delete the appointment          |
+
+    - Prices:
+
+        |        |             |                                  |
+        |--------|-------------|----------------------------------|
+        | GET    | /prices     | List of prices                   |
+        | GET    | /prices/:id | Details of a price               |
+        | POST   | /prices/    | Select a pack of photos          |
+        | POST   | /prices/    | Create a pack of photos          |
+        | POST   | /prices/:id | Update selection                 |
+        | DELETE | /prices/:id | Delete a selected pack of photos |
+
+    - Reviews:
+
+        |        |              |                     |
+        |--------|--------------|---------------------|
+        | GET    | /reviews     | Customers reviews   |
+        | GET    | /reviews/:id | Details of a review |
+        | POST   | /reviews/    | Leave a review      |
+        | POST   | /reviews/:id | Update a review     |
+        | DELETE | /reviews/:id | Delete a review     |
 
 ##  4. <a name='Packagesanddependencies'></a> Packages and dependencies
 
 | Front      | Api          | All           |
 | ---------- | -------------| --------------|
-| axios      | auth0        | eslint        |
-| next.js    | dotenv       | lerna         |
-| parcel     | fastify      | typescript    |
-| react      | fastify-cors | yarn          |
+| next.js    | auth0        | axios         |
+| parcel     | dotenv       | eslint        |
+| react      | fastify      | lerna         |
+|            | fastify-cors | typescript    |
+|            | lodash       | yarn          |
 |            | mongoose     |               |
 |            | nodemon      |               |
 |            | pino         |               |
