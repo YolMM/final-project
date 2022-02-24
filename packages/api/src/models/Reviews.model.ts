@@ -10,7 +10,7 @@ export interface iReviews extends Document {
 
 const schema = new Schema({
   userName: { type: String, require: true },
-  email: { type: String, require: true, unique: true },
+  email: { type: String, require: false },
   profilePic: { type: String, require: false },
   comment: { type: String, require: true },
   rate: { type: Number, require: true, enum: [1, 2, 3, 4, 5] },

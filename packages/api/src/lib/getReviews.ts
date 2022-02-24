@@ -23,15 +23,13 @@ export const getReviews = async () => {
     _.range(0, reviewsList.length).map((e) => getUser()),
   );
 
-  const review = [{}];
-
   for (let i = 0; i < reviewsList.length; i += 1) {
-    review.push(new Reviews({
+    // eslint-disable-next-line no-await-in-loop
+    const reviews = await Reviews.create({
       userName: users[i].name,
       profilePic: users[i].pic,
       comment: reviewsList[i].comment,
       rate: reviewsList[i].rate,
-    }));
+    });
   }
-  return review;
 };

@@ -20,7 +20,8 @@ import { Reviews } from '../models/Reviews.model';
   }
 
   await Promise.all([appointsList(), photoLists(), pricesList(), getReviews()])
-    .then((e) => console.log(`${e} loaded successfully`))
+    // eslint-disable-next-line no-unused-vars
+    .then((e) => console.log('📷 Everything loaded successfully'))
     .catch((error) => console.log(error));
 
   await close();

@@ -149,11 +149,13 @@ final-project
 
 ##  5. <a name='Documentation'></a> Documentation
 
+- All pictures where taken from [Freepik](https://www.freepik.es/)
+- Names for reviews where from [this API](https://random-names-api.herokuapp.com/random)
+- Users' pics for reviews where from [this API](https://joeschmoe.io/api/v1/male/Johndoe) combined with the name and genre from name's API.
 - [Auth0](https://auth0.com/)
 - [ESLint](https://eslint.org/docs/user-guide/getting-started)
 - [Next.js](https://nextjs.org/)
 - [React](https://es.reactjs.org/)
-- All pictures where taken from [Freepik](https://www.freepik.es/)
 
 ##  6. <a name='Acknowledgements'></a> Acknowledgements
 
