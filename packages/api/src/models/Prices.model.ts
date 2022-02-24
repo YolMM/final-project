@@ -1,6 +1,6 @@
 import mongoose, { Document, Schema } from 'mongoose';
 
-export interface Prices extends Document {
+export interface iPrices extends Document {
     packName: String,
     quantity: Number,
     price: Number,
@@ -10,12 +10,12 @@ export interface Prices extends Document {
 }
 
 const schema = new Schema({
-    packName: { type: String, require: true },
-    quantity: { type: Number, require: true },
-    price: { type: Number, require: true },
-    pricePerPhoto: { type: Number, require: false },
-    size: { type: String, require: true },
-    printed: { type: Boolean, require: true },
+  packName: { type: String, require: true },
+  quantity: { type: Number, require: true },
+  price: { type: Number, require: true },
+  pricePerPhoto: { type: Number, require: false },
+  size: { type: String, require: true },
+  printed: { type: Boolean, require: true },
 });
 
-export const Prices = mongoose.model<Prices>('Prices', schema);
+export const Prices = mongoose.model<iPrices>('Prices', schema);

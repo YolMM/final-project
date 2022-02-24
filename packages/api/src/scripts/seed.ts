@@ -20,8 +20,8 @@ import { Reviews } from '../models/Reviews.model';
   }
 
   await Promise.all([appointsList(), photoLists(), pricesList(), getReviews()])
-  .then(e => console.log(`${e} loaded successfully`))
-  .catch(error => console.log(error));
+    .then((e) => console.log(`${e} loaded successfully`))
+    .catch((error) => console.log(error));
 
   await close();
 })();

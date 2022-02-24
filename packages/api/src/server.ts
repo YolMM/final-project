@@ -1,5 +1,5 @@
 import fastify from 'fastify';
-import { main_app } from './app';
+import { mainApp } from './app';
 import { PORT } from './config';
 
 const server = fastify({
@@ -9,6 +9,6 @@ const server = fastify({
   disableRequestLogging: true,
 });
 
-server.register(main_app);
+server.register(mainApp);
 
 server.listen(PORT, '0.0.0.0');

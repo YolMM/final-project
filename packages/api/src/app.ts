@@ -1,13 +1,13 @@
 import { FastifyPluginAsync } from 'fastify';
 import fastifyCors from 'fastify-cors';
 import { conectDB } from './lib/db';
-import { appointment_router } from './routers/appointments_router';
-import { main_router } from './routers/main_router';
-import { photos_router } from './routers/photos_routers';
-import { prices_router } from './routers/prices_router';
-import { review_router } from './routers/reviews_router';
+import { appointmentRouter } from './routers/appointments_router';
+import { mainRouter } from './routers/main_router';
+import { photosRouter } from './routers/photos_routers';
+import { pricesRouter } from './routers/prices_router';
+import { reviewRouter } from './routers/reviews_router';
 
-export const main_app: FastifyPluginAsync = async (app) => {
+export const mainApp: FastifyPluginAsync = async (app) => {
   conectDB();
 
   app.register(fastifyCors, {
@@ -22,9 +22,9 @@ export const main_app: FastifyPluginAsync = async (app) => {
     },
   });
 
-  app.register(main_router);
-  app.register(photos_router, { prefix: '/photos' });
-  app.register(appointment_router, { prefix: '/appointment' });
-  app.register(prices_router, { prefix: '/prices' });
-  app.register(review_router, { prefix: '/reviews' });
+  app.register(mainRouter);
+  app.register(photosRouter, { prefix: '/photos' });
+  app.register(appointmentRouter, { prefix: '/appointment' });
+  app.register(pricesRouter, { prefix: '/prices' });
+  app.register(reviewRouter, { prefix: '/reviews' });
 };

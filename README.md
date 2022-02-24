@@ -1,4 +1,4 @@
-# FINAL PROJECT
+# FINAL PROJECT 📷
 
 <p align="center">
 	<img src="packages/api/public/1794.jpg" alt="logo" width="150"/>
@@ -74,6 +74,7 @@ final-project
         user: String,
         email: String,
         date: Date,
+        photoPack: Array<Object>,
     };
 
     Photos: {
@@ -117,7 +118,6 @@ final-project
         |--------|-------------|----------------------------------|
         | GET    | /prices     | List of prices                   |
         | GET    | /prices/:id | Details of a price               |
-        | POST   | /prices     | Select a pack of photos          |
         | POST   | /prices     | Create a pack of photos          |
         | POST   | /prices/:id | Update selection                 |
         | DELETE | /prices/:id | Delete a selected pack of photos |
@@ -134,18 +134,18 @@ final-project
 
 ##  4. <a name='Packagesanddependencies'></a> Packages and dependencies
 
-| Front      | Api          | All           |
-| ---------- | -------------| --------------|
-| next.js    | auth0        | axios         |
-| parcel     | dotenv       | eslint        |
-| react      | fastify      | lerna         |
-|            | fastify-cors | typescript    |
-|            | lodash       | yarn          |
-|            | mongoose     |               |
-|            | nodemon      |               |
-|            | pino         |               |
-|            | pino-pretty  |               |
-|            | ts-node      |               |
+    | Front      | Api          | All           |
+    | ---------- | -------------| --------------|
+    | next.js    | auth0        | axios         |
+    | parcel     | dotenv       | eslint        |
+    | react      | fastify      | lerna         |
+    |            | fastify-cors | typescript    |
+    |            | lodash       | yarn          |
+    |            | mongoose     |               |
+    |            | nodemon      |               |
+    |            | pino         |               |
+    |            | pino-pretty  |               |
+    |            | ts-node      |               |
 
 ##  5. <a name='Documentation'></a> Documentation
 

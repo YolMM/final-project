@@ -1,6 +1,6 @@
 import mongoose, { Document, Schema } from 'mongoose';
 
-export interface Reviews extends Document {
+export interface iReviews extends Document {
     userName: String,
     email: String,
     profilePic: String,
@@ -9,11 +9,11 @@ export interface Reviews extends Document {
 }
 
 const schema = new Schema({
-    userName: { type: String, require: true },
-    email: { type: String, require: true, unique: true },
-    profilePic: { type: String, require: false },
-    comment: { type: String, require: true },
-    rate: { type: Number, require: true, enum: [1, 2, 3, 4, 5] },
+  userName: { type: String, require: true },
+  email: { type: String, require: true, unique: true },
+  profilePic: { type: String, require: false },
+  comment: { type: String, require: true },
+  rate: { type: Number, require: true, enum: [1, 2, 3, 4, 5] },
 });
 
-export const Reviews = mongoose.model<Reviews>('Reviews', schema);
+export const Reviews = mongoose.model<iReviews>('Reviews', schema);

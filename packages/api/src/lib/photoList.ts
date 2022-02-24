@@ -1,6 +1,7 @@
-import { Photos } from "../models/Photos.model"
+/* eslint-disable no-unused-vars */
+import { Photos } from '../models/Photos.model';
 
-export const photoLists =  async () => {
+export const photoLists = async () => {
   const weddingCollection = await Photos.create({
     name: 'Weddings',
     images: ['bgl2.jpg', 'bgb4.jpg', 'bgr1.jpg', 'bgb3.jpg', 'girl3.jpg', 'bgc1.jpg', 'arch.jpg', 'bbk1.jpg', 'bg1.jpg', 'bgb.jpg', 'bgb2.jpg', 'bgb5.jpg', 'gondola.jpg'],
@@ -13,4 +14,4 @@ export const photoLists =  async () => {
     name: 'Others',
     images: ['girl1.jpg', 'bgl1.jpg', 'guitar.jpg', 'cp3.jpg', 'kids1.jpg', 'girl2.jpg', 'bee.jpg', 'fam3.jpg', 'kids2.jpg', 'cp1.jpg', 'girl4.jpg'],
   });
-}
+};
