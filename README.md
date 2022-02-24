@@ -103,7 +103,7 @@ final-project
 * CRUDs:
     - Appointment:
 
-        |        |                  |                                 |
+        | Method | Route            | Description                     |
         |--------|------------------|---------------------------------|
         | GET    | /appointment     | Availability for an appointment |
         | GET    | /appointment/:id | Details of the appointment      |
@@ -113,18 +113,18 @@ final-project
 
     - Prices:
 
-        |        |             |                                  |
+        | Method | Route       | Description                      |
         |--------|-------------|----------------------------------|
         | GET    | /prices     | List of prices                   |
         | GET    | /prices/:id | Details of a price               |
-        | POST   | /prices/    | Select a pack of photos          |
-        | POST   | /prices/    | Create a pack of photos          |
+        | POST   | /prices     | Select a pack of photos          |
+        | POST   | /prices     | Create a pack of photos          |
         | POST   | /prices/:id | Update selection                 |
         | DELETE | /prices/:id | Delete a selected pack of photos |
 
     - Reviews:
 
-        |        |              |                     |
+        | Method | Route        | Description         |
         |--------|--------------|---------------------|
         | GET    | /reviews     | Customers reviews   |
         | GET    | /reviews/:id | Details of a review |
@@ -153,7 +153,7 @@ final-project
 - [ESLint](https://eslint.org/docs/user-guide/getting-started)
 - [Next.js](https://nextjs.org/)
 - [React](https://es.reactjs.org/)
-- [Freepik](https://www.freepik.es/)
+- All pictures where taken from [Freepik](https://www.freepik.es/)
 
 ##  6. <a name='Acknowledgements'></a> Acknowledgements
 

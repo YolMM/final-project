@@ -1,7 +1,6 @@
 import { Prices } from "../models/Prices.model";
 
 export const pricesList =  async () => {
-
     const carnetPack = await Prices.create({
         packName: 'Carnet pack',
         quantity: 8,
@@ -10,7 +9,6 @@ export const pricesList =  async () => {
         size: '3.5 x 4.5 cm',
         printed: true,
     });
-
     const regularPack = await Prices.create({
         packName: 'Regular pack',
         quantity: 15,
@@ -19,7 +17,6 @@ export const pricesList =  async () => {
         size: '11 x 14 cm',
         printed: true,
     });
-
     const economicPack = await Prices.create({
         packName: 'Economic pack',
         quantity: 15,
@@ -28,7 +25,6 @@ export const pricesList =  async () => {
         size: '11 x 14 cm',
         printed: false,
     });
-
     const largePack = await Prices.create({
         packName: 'Large pack',
         quantity: 15,
@@ -37,7 +33,6 @@ export const pricesList =  async () => {
         size: '12 x 15 cm',
         printed: true,
     });
-
     const familyPack = await Prices.create({
         packName: 'Family pack',
         quantity: 5,
@@ -71,5 +66,4 @@ export const pricesPerPh = [
     {pricePerPhoto: 0.73, size: '16 x 20 cm', printed: false,},
     {pricePerPhoto: 0.90, size: '20 x 24 cm', printed: true,},
     {pricePerPhoto: 0.75, size: '20 x 24 cm', printed: false,},
-
 ]

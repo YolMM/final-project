@@ -22,7 +22,7 @@ const getUserPic = async (userName: string, userGenre: string) => {
     return userPic;
 };
 
-export const createReviews =  async () => {
+export const getReviews =  async () => {
     const users = await Promise.all(
         _.range(0, reviewsList.length).map((e) => getUser())
     );

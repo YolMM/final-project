@@ -12,6 +12,12 @@ export const review_router: FastifyPluginAsync = async (app) => {
         const review = await Reviews.find().lean();
         return review;
     });
+    // Details of a review
+    app.get('/:id', async (request: Myrequest, reply: FastifyReply) => {
+        const { id } = request.params;
+        await Reviews.findById(id);
+        return { status: 'detail' };
+    });
     // Create a new review
     app.post('/', async (request: Myrequest, reply: FastifyReply) => {
         const { userName, email, comment, rate } = request.body;
@@ -19,7 +25,13 @@ export const review_router: FastifyPluginAsync = async (app) => {
         await review.save();
         return review;
     });
-    // Delete reviews
+    // Update a review
+    app.get('/:id', async (request: Myrequest, reply: FastifyReply) => {
+        const { id } = request.params;
+        await Reviews.findByIdAndUpdate(id);
+        return { status: 'update' };
+    });
+    // Delete a review
     app.get('/:id/delete', async (request: Myrequest, reply: FastifyReply) => {
         const { id } = request.params;
         await Reviews.findByIdAndDelete(id);
