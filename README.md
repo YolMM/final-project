@@ -25,7 +25,7 @@
 
 This is my final project for [CORE Code School](https://www.corecode.school/).
 
-Everyone knows the famous photographer [John Doe](https://en.wikipedia.org/wiki/John_Doe), so here it is his [website](). There you will be able to find some information about him, his work, reviews from other customers, prices and even make an appointment to discuss anything you need with John Doe.
+Everyone knows the famous photographer [John Doe](https://en.wikipedia.org/wiki/John_Doe), so here it is his [website](https://i.gifer.com/1kpe.mp4). There you will be able to find some information about him, his work, reviews from other customers, prices and even make an appointment to discuss anything you need with John Doe.
 
 ##  2. <a name='Motivation'></a> Motivation
 
