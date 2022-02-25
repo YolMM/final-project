@@ -28,7 +28,7 @@ export const reviewRouter: FastifyPluginAsync = async (app) => {
     return review;
   });
   // Update a review
-  app.get('/:id', async (request: Myrequest, reply: FastifyReply) => {
+  app.get('/:id/update', async (request: Myrequest, reply: FastifyReply) => {
     const { id } = request.params;
     await Reviews.findByIdAndUpdate(id);
     return { status: 'update' };

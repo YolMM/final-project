@@ -27,7 +27,7 @@ export const appointmentRouter: FastifyPluginAsync = async (app) => {
     return appointment;
   });
   // Update a appointment
-  app.get('/:id', async (request: Myrequest, reply: FastifyReply) => {
+  app.get('/:id/update', async (request: Myrequest, reply: FastifyReply) => {
     const { id } = request.params;
     await Appointment.findByIdAndUpdate(id);
     return { status: 'update' };

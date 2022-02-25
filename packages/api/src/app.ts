@@ -24,7 +24,7 @@ export const mainApp: FastifyPluginAsync = async (app) => {
 
   app.register(mainRouter);
   app.register(photosRouter, { prefix: '/photos' });
-  app.register(appointmentRouter, { prefix: '/appointment' });
+  app.register(appointmentRouter, { prefix: '/appointments' });
   app.register(pricesRouter, { prefix: '/prices' });
   app.register(reviewRouter, { prefix: '/reviews' });
 };
