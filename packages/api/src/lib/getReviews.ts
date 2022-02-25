@@ -28,6 +28,7 @@ export const getReviews = async () => {
     const reviews = await Reviews.create({
       userName: users[i].name,
       profilePic: users[i].pic,
+      email: reviewsList[i].email,
       comment: reviewsList[i].comment,
       rate: reviewsList[i].rate,
     });
