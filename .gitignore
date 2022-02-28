@@ -7,3 +7,4 @@ package-lock.json
 .next
 yarn.lock
 yarn-error.log
+next-env.d.ts

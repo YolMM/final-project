@@ -1,9 +1,10 @@
 import React from 'react';
+import Image from 'next/image';
 
 const IndexPage = () => (
   <div>
     <h2>JD Photography</h2>
-    <img alt="" src="packages/api/public/logo.jpg" />
+    <Image src="/logo.jpg" alt="logo" width="64" height="64" />
   </div>
 );
 
