@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { Photos } from '../models/Photos.model';
+import { Photos } from '../../models/Photos.model';
 
 export const photoLists = async () => {
   const weddingCollection = await Photos.create({

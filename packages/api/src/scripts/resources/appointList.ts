@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { Appointment } from '../models/Appointment.model';
+import { Appointment } from '../../models/Appointment.model';
 
 export const appointsList = async () => {
   const firstDate = await Appointment.create({

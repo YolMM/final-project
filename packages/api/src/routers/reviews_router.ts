@@ -17,8 +17,8 @@ export const reviewRouter: FastifyPluginAsync = async (app) => {
   // Details of a review
   app.get('/:id', async (request: Myrequest, reply: FastifyReply) => {
     const { id } = request.params;
-    await Reviews.findById(id);
-    return { status: 'detail' };
+    const review = await Reviews.findById(id);
+    return review;
   });
   // Create a new review
   app.post('/', async (request: Myrequest, reply: FastifyReply) => {
@@ -28,13 +28,16 @@ export const reviewRouter: FastifyPluginAsync = async (app) => {
     return review;
   });
   // Update a review
-  app.get('/:id/update', async (request: Myrequest, reply: FastifyReply) => {
+  app.post('/:id', async (request: Myrequest, reply: FastifyReply) => {
     const { id } = request.params;
-    await Reviews.findByIdAndUpdate(id);
-    return { status: 'update' };
+    const { userName, email, comment, rate } = request.body;
+    await Reviews.findByIdAndDelete(id);
+    const review = new Reviews({ userName, email, comment, rate });
+    await review.save();
+    return review;
   });
   // Delete a review
-  app.get('/:id/delete', async (request: Myrequest, reply: FastifyReply) => {
+  app.delete('/:id', async (request: Myrequest, reply: FastifyReply) => {
     const { id } = request.params;
     await Reviews.findByIdAndDelete(id);
     return { status: 'delete' };

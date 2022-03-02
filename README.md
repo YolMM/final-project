@@ -1,7 +1,7 @@
 # FINAL PROJECT 📷
 
 <p align="center">
-	<img src="packages/api/public/1794.jpg" alt="logo" width="150"/>
+	<img src="packages/front/public/1794.jpg" alt="logo" width="150"/>
 </p>
 
 ##  <a name='Tableofcontents'></a>Table of contents
@@ -136,13 +136,12 @@ final-project
 
     | Front      | Api          | All           |
     | ---------- | -------------| --------------|
-    | next.js    | auth0        | axios         |
-    | parcel     | dotenv       | eslint        |
-    | react      | fastify      | lerna         |
-    |            | fastify-cors | typescript    |
-    |            | lodash       | yarn          |
-    |            | mongoose     |               |
-    |            | nodemon      |               |
+    | next.js    | dotenv       | auth0         |
+    | parcel     | fastify      | axios         |
+    | react      | fastify-cors | eslint        |
+    | swr        | lodash       | lerna         |
+    |            | mongoose     | typescript    |
+    |            | nodemon      | yarn          |
     |            | pino         |               |
     |            | pino-pretty  |               |
     |            | ts-node      |               |

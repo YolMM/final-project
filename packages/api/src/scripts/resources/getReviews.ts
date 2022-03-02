@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import axios from 'axios';
 import _ from 'lodash';
-import { Reviews } from '../models/Reviews.model';
+import { Reviews } from '../../models/Reviews.model';
 import { reviewsList } from './reviewsList';
 
 const getUser = async () => {

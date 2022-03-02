@@ -13,11 +13,11 @@ export const appointmentRouter: FastifyPluginAsync = async (app) => {
     const appointment = await Appointment.find().lean();
     return appointment;
   });
-  // Details of a appointment
+  // Details of an appointment
   app.get('/:id', async (request: Myrequest, reply: FastifyReply) => {
     const { id } = request.params;
-    await Appointment.findById(id);
-    return { status: 'detail' };
+    const appointment = await Appointment.findById(id);
+    return appointment;
   });
   // Create a new appointment
   app.post('/', async (request: Myrequest, reply: FastifyReply) => {
@@ -26,14 +26,17 @@ export const appointmentRouter: FastifyPluginAsync = async (app) => {
     await appointment.save();
     return appointment;
   });
-  // Update a appointment
-  app.get('/:id/update', async (request: Myrequest, reply: FastifyReply) => {
+  // Update an appointment
+  app.post('/:id', async (request: Myrequest, reply: FastifyReply) => {
     const { id } = request.params;
-    await Appointment.findByIdAndUpdate(id);
-    return { status: 'update' };
+    const { user, email, date } = request.body;
+    await Appointment.findByIdAndDelete(id);
+    const appointment = new Appointment({ user, email, date });
+    await appointment.save();
+    return appointment;
   });
-  // Delete a appointment
-  app.get('/:id/delete', async (request: Myrequest, reply: FastifyReply) => {
+  // Delete an appointment
+  app.delete('/:id', async (request: Myrequest, reply: FastifyReply) => {
     const { id } = request.params;
     await Appointment.findByIdAndDelete(id);
     return { status: 'delete' };

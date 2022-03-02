@@ -1,8 +1,8 @@
-import { appointsList } from '../lib/appointList';
+import { appointsList } from './resources/appointList';
 import { conectDB } from '../lib/db';
-import { getReviews } from '../lib/getReviews';
-import { photoLists } from '../lib/photoList';
-import { pricesList } from '../lib/priceList';
+import { getReviews } from './resources/getReviews';
+import { photoLists } from './resources/photoList';
+import { pricesList } from './resources/priceList';
 import { Appointment } from '../models/Appointment.model';
 import { Photos } from '../models/Photos.model';
 import { Prices } from '../models/Prices.model';

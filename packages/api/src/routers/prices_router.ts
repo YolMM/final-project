@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { FastifyPluginAsync, FastifyReply, FastifyRequest } from 'fastify';
-import { pricesPerPh } from '../lib/priceList';
+import { pricesPerPh } from '../scripts/resources/priceList';
 import { Prices } from '../models/Prices.model';
 
 type Myrequest = FastifyRequest<{
@@ -14,10 +14,17 @@ export const pricesRouter: FastifyPluginAsync = async (app) => {
     const packs = await Prices.find().lean();
     return packs;
   });
+  // Details of a pack
+  app.get('/:id', async (request: Myrequest, reply: FastifyReply) => {
+    const { id } = request.params;
+    const pack = await Prices.findById(id);
+    return pack;
+  });
   // Create a new pack
+  // NO FUNCIONA
   app.post('/', async (request: Myrequest, reply: FastifyReply) => {
     const { quantity, size, printed } = request.body;
-    let photoPrice: number = 0;
+    let photoPrice: number = 1;
     for (let i = 0; i < pricesPerPh.length; i += 1) {
       if ((printed === pricesPerPh[i].printed) && (size === pricesPerPh[i].size)) {
         photoPrice = pricesPerPh[i].pricePerPhoto;
@@ -31,13 +38,14 @@ export const pricesRouter: FastifyPluginAsync = async (app) => {
     return pack;
   });
   // Update a selection
-  app.get('/:id', async (request: Myrequest, reply: FastifyReply) => {
+  // NO FUNCIONA
+  app.post('/:id', async (request: Myrequest, reply: FastifyReply) => {
     const { id } = request.params;
-    await Prices.findByIdAndUpdate(id);
-    return { status: 'update' };
+    const pack = await Prices.findByIdAndUpdate(id);
+    return pack;
   });
   // Delete packs
-  app.get('/:id/delete', async (request: Myrequest, reply: FastifyReply) => {
+  app.delete('/:id', async (request: Myrequest, reply: FastifyReply) => {
     const { id } = request.params;
     await Prices.findByIdAndDelete(id);
     return { status: 'delete' };

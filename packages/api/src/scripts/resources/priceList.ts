@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { Prices } from '../models/Prices.model';
+import { Prices } from '../../models/Prices.model';
 
 export const pricesList = async () => {
   const carnetPack = await Prices.create({
