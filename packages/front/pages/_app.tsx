@@ -1,14 +1,15 @@
 import React from 'react';
-import Menu from './components/Menu';
+import { SWRConfig } from 'swr';
+import fetcher from '../lib/swr-fetch';
 
 const MyApp = ({ Component, pageProps }) => (
-  <>
-    <header>
-      <Menu />
-    </header>
-    <main>
-      <Component {...pageProps} />
-    </main>
-  </>
+  <SWRConfig
+    value={{
+      refreshInterval: 10 * 1000,
+      fetcher,
+    }}
+  >
+    <Component {...pageProps} />
+  </SWRConfig>
 );
 export default MyApp;
