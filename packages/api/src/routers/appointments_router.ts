@@ -29,10 +29,9 @@ export const appointmentRouter: FastifyPluginAsync = async (app) => {
   // Update an appointment
   app.post('/:id', async (request: Myrequest, reply: FastifyReply) => {
     const { id } = request.params;
-    const { user, email, date } = request.body;
-    await Appointment.findByIdAndDelete(id);
-    const appointment = new Appointment({ user, email, date });
-    await appointment.save();
+    const appointment = await Appointment.findOneAndUpdate({ _id: id }, request.body, {
+      new: true,
+    });
     return appointment;
   });
   // Delete an appointment

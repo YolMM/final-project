@@ -21,10 +21,9 @@ export const pricesRouter: FastifyPluginAsync = async (app) => {
     return pack;
   });
   // Create a new pack
-  // NO FUNCIONA
   app.post('/', async (request: Myrequest, reply: FastifyReply) => {
     const { quantity, size, printed } = request.body;
-    let photoPrice: number = 1;
+    let photoPrice: number = 0;
     for (let i = 0; i < pricesPerPh.length; i += 1) {
       if ((printed === pricesPerPh[i].printed) && (size === pricesPerPh[i].size)) {
         photoPrice = pricesPerPh[i].pricePerPhoto;
@@ -32,16 +31,17 @@ export const pricesRouter: FastifyPluginAsync = async (app) => {
     }
     const totalPrice = (photoPrice * quantity).toFixed(2);
     const pack = new Prices({
-      name: 'Customer\'s pack', quantity, size, printed, price: { totalPrice }, pricePerPhoto: { photoPrice },
+      name: 'Customer\'s pack', quantity, size, printed, price: totalPrice, pricePerPhoto: photoPrice,
     });
     await pack.save();
     return pack;
   });
   // Update a selection
-  // NO FUNCIONA
   app.post('/:id', async (request: Myrequest, reply: FastifyReply) => {
     const { id } = request.params;
-    const pack = await Prices.findByIdAndUpdate(id);
+    const pack = await Prices.findOneAndUpdate({ _id: id }, request.body, {
+      new: true,
+    });
     return pack;
   });
   // Delete packs

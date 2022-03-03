@@ -30,10 +30,9 @@ export const reviewRouter: FastifyPluginAsync = async (app) => {
   // Update a review
   app.post('/:id', async (request: Myrequest, reply: FastifyReply) => {
     const { id } = request.params;
-    const { userName, email, comment, rate } = request.body;
-    await Reviews.findByIdAndDelete(id);
-    const review = new Reviews({ userName, email, comment, rate });
-    await review.save();
+    const review = await Reviews.findOneAndUpdate({ _id: id }, request.body, {
+      new: true,
+    });
     return review;
   });
   // Delete a review
