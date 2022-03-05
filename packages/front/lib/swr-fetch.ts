@@ -1,9 +1,9 @@
 import axios from 'axios';
 
-const pricesApi = axios.create({ url: 'http://0.0.0.0:3001' });
+const jdApi = axios.create({ url: 'http://localhost:3001' });
 
 const fetcher = async(resource, init) => {
-  const res = await pricesApi.get(resource);
+  const res = await jdApi.get(resource);
   console.log(res.data);
   return res.data;
 };

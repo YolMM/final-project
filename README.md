@@ -153,6 +153,7 @@ final-project
 - Users' pics for reviews where from [this API](https://joeschmoe.io/api/v1/male/Johndoe) combined with the name and genre from name's API.
 - [Auth0](https://auth0.com/)
 - [ESLint](https://eslint.org/docs/user-guide/getting-started)
+- Mongoose [docs](https://mongoosejs.com/docs/)
 - [Next.js](https://nextjs.org/)
 - [React](https://es.reactjs.org/)
 

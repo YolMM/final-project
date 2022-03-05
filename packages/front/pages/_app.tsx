@@ -1,6 +1,8 @@
 import React from 'react';
 import { SWRConfig } from 'swr';
 import fetcher from '../lib/swr-fetch';
+import Footer from './components/Footer';
+import Menu from './components/Menu';
 
 const MyApp = ({ Component, pageProps }) => (
   <SWRConfig
@@ -9,7 +11,9 @@ const MyApp = ({ Component, pageProps }) => (
       fetcher,
     }}
   >
+    <Menu />
     <Component {...pageProps} />
+    <Footer />
   </SWRConfig>
 );
 export default MyApp;

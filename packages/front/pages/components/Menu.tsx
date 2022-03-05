@@ -16,7 +16,7 @@ const Menu = () => (
       <Link href="/contact">Contact</Link>
     </li>
     <li>
-      <Link href="/">Log in</Link>
+      <Sessionbtn />
     </li>
   </ul>
 );
