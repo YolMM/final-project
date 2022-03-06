@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { FastifyPluginAsync, FastifyReply, FastifyRequest } from 'fastify';
+import { hasUser } from '../aux/hasUser';
 import { Appointment } from '../models/Appointment.model';
 
 type Myrequest = FastifyRequest<{
@@ -9,9 +10,13 @@ type Myrequest = FastifyRequest<{
 
 export const appointmentRouter: FastifyPluginAsync = async (app) => {
   // Get all appointments
-  app.get('/', async () => {
-    const appointment = await Appointment.find().lean();
-    return appointment;
+  app.get('/', async (req) => {
+    const user = await hasUser(req);
+    if (user) {
+      const appointment = await Appointment.find().lean();
+      return appointment;
+    }
+    return [];
   });
   // Details of an appointment
   app.get('/:id', async (request: Myrequest, reply: FastifyReply) => {
