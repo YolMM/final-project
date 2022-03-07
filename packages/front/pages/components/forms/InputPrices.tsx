@@ -20,7 +20,7 @@ const InputPrices = () => {
     <div>
       <FlexDiv>
         <FormInput>
-          <input value={state.prices.quantity} onChange={(e) => (actions.updateQuantity(e.target.value))} placeholder="0" />
+          <input type="number" value={state.prices.quantity} onChange={(e: number) => (actions.updateQuantity(e.target.value))} placeholder="0" />
         </FormInput>
         <FormInput>
           <p>Choose one</p>
@@ -28,7 +28,7 @@ const InputPrices = () => {
         </FormInput>
         <FormInput>
           <p>Do you want photos printed?</p>
-          <input value={state.prices.printed} onChange={(e) => (actions.updatePrinted(e.target.value))} placeholder="" />
+          <input type="checkbox" value={state.prices.printed} onChange={(e) => (actions.updatePrinted(e.target.value))} placeholder="" />
           <button onClick={() => actions.sendAppoint()} type="button">Create pack</button>
         </FormInput>
       </FlexDiv>

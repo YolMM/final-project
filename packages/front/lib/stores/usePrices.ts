@@ -4,14 +4,15 @@ import { mutate } from '../swr-fetch';
 const Store = createStore({
   initialState: {
     prices: {
-      quantity: '',
+      quantity: 0,
       size: '',
-      printed: '',
+      printed: true,
     },
   },
   actions: {
-    updateQuantity: (quantity) => ({ setState, getState }) => {
+    updateQuantity: (quant) => ({ setState, getState }) => {
       const currentphotoPack = getState().prices;
+      const quantity = parseInt(quant, 10);
       setState({
         prices: { ...currentphotoPack, quantity },
       });
@@ -22,14 +23,16 @@ const Store = createStore({
         prices: { ...currentphotoPack, size },
       });
     },
-    updatePrinted: (printed) => ({ setState, getState }) => {
+    updatePrinted: (print) => ({ setState, getState }) => {
       const currentphotoPack = getState().prices;
+      const printed = (print === 'true');
       setState({
         prices: { ...currentphotoPack, printed },
       });
     },
     sendAppoint: () => ({ setState, getState }) => {
       const currentphotoPack = getState().prices;
+      console.log(currentphotoPack);
 
       // Send info to DB
       mutate('/prices', currentphotoPack);
@@ -37,9 +40,9 @@ const Store = createStore({
       // Empty inputs
       setState({
         prices: {
-          quantity: '',
+          quantity: 0,
           size: '',
-          printed: '',
+          printed: true,
         },
       });
     },
