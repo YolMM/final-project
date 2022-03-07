@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import InputReview from './components/forms/InputReview';
+import Review from './components/Review';
 
 const IndexPage = () => (
   <div>
@@ -9,7 +10,7 @@ const IndexPage = () => (
       <Image src="/logo.jpg" alt="logo" width="64" height="64" />
     </div>
     <div>
-      Review
+      <Review />
     </div>
     <div>
       <InputReview />

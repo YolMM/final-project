@@ -2,17 +2,16 @@ import React from 'react';
 import Link from 'next/link';
 
 const Footer = () => (
-  <ul>
-    <li>
+  <div>
+    <div>
       <Link href="/">Find the studio</Link>
-    </li>
-    <li>
       <Link href="/aboutme">About me</Link>
-    </li>
-    <li>
       <Link href="/contact">Contact</Link>
-    </li>
-  </ul>
+    </div>
+    <div>
+      <p>Build for CORE Code School</p>
+    </div>
+  </div>
 );
 
 export default Footer;

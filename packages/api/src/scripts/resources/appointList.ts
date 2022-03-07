@@ -10,15 +10,15 @@ export const appointsList = async () => {
     user: 'unknown',
     date: '2022-04-14',
   });
-  const fourthDate = await Appointment.create({
+  const thirdDate = await Appointment.create({
     user: 'unknown',
     date: '2022-05-01',
   });
-  const fifthDate = await Appointment.create({
+  const fourthDate = await Appointment.create({
     user: 'unknown',
     date: '2022-03-26',
   });
-  const sixthDate = await Appointment.create({
+  const fifthDate = await Appointment.create({
     user: 'unknown',
     date: '2022-04-07',
   });

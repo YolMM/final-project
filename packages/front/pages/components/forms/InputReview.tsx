@@ -1,10 +1,10 @@
-/* eslint-disable react/jsx-props-no-spreading */
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import { useReview } from '../../../lib/useReview';
+import { useReview } from '../../../lib/stores/useReview';
 
 const FlexDiv = styled.div`
-display:flex
+display:flex;
+align-content: space-around;
 `;
 
 const FormInput = styled.div`
@@ -15,12 +15,21 @@ margin:10px;
 
 const InputReview = () => {
   const [state, actions] = useReview();
+
   return (
     <div>
       <FlexDiv>
         <FormInput>
           <input value={state.review.userName} onChange={(e) => (actions.updateUsername(e.target.value))} placeholder="Name" />
+        </FormInput>
+        <FormInput>
           <input value={state.review.email} onChange={(e) => (actions.updateEmail(e.target.value))} placeholder="Email" />
+        </FormInput>
+        <FormInput>
+          <input value={state.review.rate} onChange={(e) => (actions.updateRate(e.target.value))} placeholder="Value" />
+        </FormInput>
+        <FormInput>
+          <input value={state.review.comment} onChange={(e) => (actions.updateComment(e.target.value))} placeholder="Comment" />
           <button onClick={() => actions.sendReview()} type="button">Submit review</button>
         </FormInput>
       </FlexDiv>
@@ -30,17 +39,9 @@ const InputReview = () => {
 
 export default InputReview;
 
-/* Dejo esto aquí para cuando me funcione el formulario sencillo
+/* Dejo esto aquí para cuando ponga el Auth0
 
-        <FormInput>
-          <input value={email} placeholder="e-mail" />
-        </FormInput>
 <FormInput>
   <input value={review.profilePic} />
 </FormInput>
-<FormInput>
-  <input value={review.rate} placeholder="Value" />
-</FormInput>
-<FormInput>
-  <input value={review.comment} placeholder="Comment" />
-</FormInput> */
+ */
