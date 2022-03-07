@@ -10,19 +10,19 @@ const Store = createStore({
     },
   },
   actions: {
-    updateUser: (user) => ({ setState, getState }) => {
+    updateUser: (user: string) => ({ setState, getState }) => {
       const currentAppoint = getState().appointment;
       setState({
         appointment: { ...currentAppoint, user },
       });
     },
-    updateEmail: (email) => ({ setState, getState }) => {
+    updateEmail: (email: string) => ({ setState, getState }) => {
       const currentAppoint = getState().appointment;
       setState({
         appointment: { ...currentAppoint, email },
       });
     },
-    updateDate: (date) => ({ setState, getState }) => {
+    updateDate: (date: string) => ({ setState, getState }) => {
       const currentAppoint = getState().appointment;
       setState({
         appointment: { ...currentAppoint, date },

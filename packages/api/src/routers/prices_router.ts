@@ -31,7 +31,7 @@ export const pricesRouter: FastifyPluginAsync = async (app) => {
     }
     const totalPrice = (photoPrice * quantity).toFixed(2);
     const pack = new Prices({
-      name: 'Customer\'s pack', quantity, size, printed, price: totalPrice, pricePerPhoto: photoPrice,
+      packName: 'Customer\'s pack', quantity, size, printed, price: totalPrice, pricePerPhoto: photoPrice,
     });
     await pack.save();
     return pack;

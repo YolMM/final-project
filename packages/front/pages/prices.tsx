@@ -1,4 +1,5 @@
 import React from 'react';
+import InputPrices from './components/forms/InputPrices';
 import Prices from './components/Prices';
 
 const PricesPage = () => (
@@ -22,6 +23,7 @@ const PricesPage = () => (
     </div>
     <div>
       <p>Here you can choose one of these packs or create your own pack and make an appointment.</p>
+      <InputPrices />
       <button type="button" onClick={(e) => console.log('click', e)}>Make an appointment</button>
     </div>
   </div>
