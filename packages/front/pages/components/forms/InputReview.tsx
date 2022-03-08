@@ -1,17 +1,7 @@
 import React from 'react';
-import styled from 'styled-components';
 import { useReview } from '../../../lib/stores/useReview';
-
-const FlexDiv = styled.div`
-display:flex;
-align-content: space-around;
-`;
-
-const FormInput = styled.div`
-display:flex;
-flex-flow: colum nowrap;
-margin:10px;
-`;
+import FlexDiv from '../style/FlexDiv';
+import FormInput from '../style/FormInput';
 
 const InputReview = () => {
   const [state, actions] = useReview();
@@ -20,16 +10,16 @@ const InputReview = () => {
     <div>
       <FlexDiv>
         <FormInput>
-          <input value={state.review.userName} onChange={(e) => (actions.updateUsername(e.target.value))} placeholder="Name" />
+          <input value={state.review.userName} onChange={(e) => (actions.updateUsername(e.target.value))} required placeholder="Name" />
         </FormInput>
         <FormInput>
-          <input value={state.review.email} onChange={(e) => (actions.updateEmail(e.target.value))} placeholder="Email" />
+          <input value={state.review.email} onChange={(e) => (actions.updateEmail(e.target.value))} required placeholder="Email" />
         </FormInput>
         <FormInput>
-          <input value={state.review.rate} onChange={(e) => (actions.updateRate(e.target.value))} placeholder="Value" />
+          <input value={state.review.rate} onChange={(e) => (actions.updateRate(e.target.value))} required placeholder="Value" />
         </FormInput>
         <FormInput>
-          <input value={state.review.comment} onChange={(e) => (actions.updateComment(e.target.value))} placeholder="Comment" />
+          <input value={state.review.comment} onChange={(e) => (actions.updateComment(e.target.value))} required placeholder="Comment" />
           <button onClick={() => actions.sendReview()} type="button">Submit review</button>
         </FormInput>
       </FlexDiv>
@@ -39,7 +29,7 @@ const InputReview = () => {
 
 export default InputReview;
 
-/* Dejo esto aquí para cuando ponga el Auth0
+/* Dejo esto aquí para cuando Auth0 funcione bien
 
 <FormInput>
   <input value={review.profilePic} />

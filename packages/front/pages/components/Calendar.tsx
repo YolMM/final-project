@@ -1,19 +1,28 @@
 import React from 'react';
 import useSWR from 'swr';
+import { privateFetcher } from '../../lib/swr-fetch';
+import InputAppoint from './forms/InputAppoint';
 
 const Calendar = () => {
-  const { data } = useSWR('/appointments');
+  const { data } = useSWR('api/appointments', privateFetcher);
+
   if (!data) {
-    return <div>We couldn't find any appointment. Sorry :(</div>;
+    return <div>Please, log in to make an appointment.</div>;
   }
+
   return (
     <div>
-      <p>Data is here!</p>
-      {data.map((appoints) => (
-        <div key={appoints.id}>
-          <p>{appoints.date}</p>
-        </div>
-      ))}
+      <div>
+        <InputAppoint />
+      </div>
+      <div>
+        <p>Data is here!</p>
+        {data.map((appoints) => (
+          <div key={appoints.id}>
+            <p>{appoints.date}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

@@ -2,10 +2,10 @@ import React from 'react';
 import useSWR from 'swr';
 
 const Prices = () => {
-  const { data } = useSWR('/prices');
-  if (!data) {
-    return <div>We couldn't find anything. Sorry :(</div>;
-  }
+  const { data, error } = useSWR('/prices');
+
+  if (error) return <div>Failed to load</div>;
+  if (!data) return <div>We couldn't find anything. Sorry :(</div>;
 
   return (
     <div>

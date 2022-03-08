@@ -6,7 +6,7 @@ const Store = createStore({
     prices: {
       quantity: 0,
       size: '',
-      printed: true,
+      printed: false,
     },
   },
   actions: {
@@ -23,9 +23,9 @@ const Store = createStore({
         prices: { ...currentphotoPack, size },
       });
     },
-    updatePrinted: (print) => ({ setState, getState }) => {
+    updatePrinted: () => ({ setState, getState }) => {
       const currentphotoPack = getState().prices;
-      const printed = (print === 'true');
+      const printed = !currentphotoPack.printed;
       setState({
         prices: { ...currentphotoPack, printed },
       });
@@ -41,8 +41,8 @@ const Store = createStore({
       setState({
         prices: {
           quantity: 0,
-          size: '',
-          printed: true,
+          size: currentphotoPack.size,
+          printed: currentphotoPack.printed,
         },
       });
     },
