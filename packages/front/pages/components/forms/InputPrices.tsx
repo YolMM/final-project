@@ -17,7 +17,6 @@ const InputPrices = () => {
         <FormInput>
           <p>Choose one:</p>
           <select value={state.prices.size} onChange={(e) => (actions.updateSize(e.target.value))}>
-            <option value="">--</option>
             {sizeArr.map((e) => <option value={e}>{e}</option>)}
           </select>
         </FormInput>

@@ -1,27 +1,53 @@
 import { createHook, createStore } from 'react-sweet-state';
+import * as Yup from 'yup';
 import { mutate } from '../swr-fetch';
 
 const Store = createStore({
   initialState: {
     prices: {
-      quantity: 0,
-      size: '',
+      quantity: 1,
+      size: '4 x 6 cm',
       printed: false,
+    },
+    errors: {
+      quantity: false,
+      size: false,
     },
   },
   actions: {
     updateQuantity: (quant) => ({ setState, getState }) => {
       const currentphotoPack = getState().prices;
-      const quantity = parseInt(quant, 10);
-      setState({
-        prices: { ...currentphotoPack, quantity },
-      });
+      const currentErrors = getState().errors;
+
+      const valid = Yup.number().min(1).isValidSync(quant);
+      if (!valid) {
+        setState({
+          prices: { ...currentphotoPack },
+          errors: { ...currentErrors, quantity: true },
+        });
+      } else {
+        setState({
+          prices: { ...currentphotoPack, quantity: quant as number },
+          errors: { ...currentErrors, quantity: false },
+        });
+      }
     },
     updateSize: (size) => ({ setState, getState }) => {
       const currentphotoPack = getState().prices;
-      setState({
-        prices: { ...currentphotoPack, size },
-      });
+      const currentErrors = getState().errors;
+
+      const valid = Yup.string().matches(/(\d|\d\d) x (\d|\d\d) cm/).isValidSync(size);
+      if (!valid) {
+        setState({
+          prices: { ...currentphotoPack },
+          errors: { ...currentErrors, size: true },
+        });
+      } else {
+        setState({
+          prices: { ...currentphotoPack, size: size as string },
+          errors: { ...currentErrors, size: false },
+        });
+      }
     },
     updatePrinted: () => ({ setState, getState }) => {
       const currentphotoPack = getState().prices;
@@ -32,7 +58,11 @@ const Store = createStore({
     },
     sendAppoint: () => ({ setState, getState }) => {
       const currentphotoPack = getState().prices;
-      console.log(currentphotoPack);
+      const currentErrors = getState().errors;
+
+      if (currentErrors.size) {
+        return;
+      }
 
       // Send info to DB
       mutate('/prices', currentphotoPack);
@@ -40,9 +70,13 @@ const Store = createStore({
       // Empty inputs
       setState({
         prices: {
-          quantity: 0,
+          quantity: 1,
           size: currentphotoPack.size,
           printed: currentphotoPack.printed,
+        },
+        errors: {
+          quantity: false,
+          size: false,
         },
       });
     },
