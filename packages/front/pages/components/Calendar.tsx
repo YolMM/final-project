@@ -16,7 +16,6 @@ const Calendar = () => {
         <InputAppoint />
       </div>
       <div>
-        <p>Data is here!</p>
         {data.map((appoints) => (
           <div key={appoints.id}>
             <p>{appoints.date}</p>

@@ -16,7 +16,7 @@ const InputReview = () => {
           <input value={state.review.email} onChange={(e) => (actions.updateEmail(e.target.value))} required placeholder="Email" />
         </FormInput>
         <FormInput>
-          <input value={state.review.rate} onChange={(e) => (actions.updateRate(e.target.value))} required placeholder="Value" />
+          <input value={state.review.rate} type="number" onChange={(e) => (actions.updateRate(e.target.value))} required placeholder="Value" />
         </FormInput>
         <FormInput>
           <input value={state.review.comment} onChange={(e) => (actions.updateComment(e.target.value))} required placeholder="Comment" />

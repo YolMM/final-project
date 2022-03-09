@@ -7,17 +7,21 @@ const Photos = () => {
   if (!data) {
     return <div>We couldn't find anything. Sorry :(</div>;
   }
+
   return (
     <div>
-      {data.map((photos) => (
-        <div>
-          <Image src={photos.images[0]} alt="photo" width="300" height="200" />
-          <div>{photos.name}</div>
+      {data.map((photos) => {
+        const url = `/gallery?filter=${photos.name}`;
+        return (
           <div>
-            <button type="button" onClick={(e) => console.log(e)}>See more</button>
+            <Image src={photos.images[0]} alt="photo" width="300" height="200" />
+            <div>{photos.name}</div>
+            <div>
+              <a href={url}><button type="button">See more</button></a>
+            </div>
           </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 };

@@ -11,7 +11,7 @@ export interface iAppointment extends Document {
 const schema = new Schema({
   user: { type: String, require: true },
   email: { type: String, require: false },
-  date: { type: Date, require: true, default: Date.now },
+  date: { type: Date, require: true, default: Date.now() },
   photoPack: { type: Schema.Types.ObjectId, ref: 'iPrices', require: false },
 });
 
