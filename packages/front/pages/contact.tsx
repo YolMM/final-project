@@ -1,12 +1,12 @@
 import React from 'react';
-import Link from 'next/link';
+import { ALink } from './components/style/Style';
 
 const Contact = () => (
   <div>
     <h2>Contact me!</h2>
     <div>
       <p>Let's talk about what can I offer to you:</p>
-      <Link href="/appointments">Click here</Link>
+      <ALink href="/appointments">Click here</ALink>
     </div>
   </div>
 );

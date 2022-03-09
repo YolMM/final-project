@@ -1,7 +1,6 @@
 import React from 'react';
 import { useAppoint } from '../../../lib/stores/useAppoint';
-import FlexDiv from '../style/FlexDiv';
-import FormInput from '../style/FormInput';
+import { Button, FlexDiv, FormInput } from '../style/Style';
 
 const InputAppoint = () => {
   const [state, actions] = useAppoint();
@@ -17,7 +16,7 @@ const InputAppoint = () => {
         </FormInput>
         <FormInput>
           <input type="date" value={state.appointment.date} onChange={(e) => (actions.updateDate(e.target.value))} required />
-          <button onClick={() => actions.sendAppoint()} type="button">Make appointment</button>
+          <Button onClick={() => actions.sendAppoint()} type="button">Make appointment</Button>
         </FormInput>
       </FlexDiv>
     </div>

@@ -1,25 +1,15 @@
 import React from 'react';
-import Link from 'next/link';
 import { Sessionbtn } from './Sessionbtn';
+import { ALink, MenuSty } from '../style/Style';
 
 const Menu = () => (
-  <ul>
-    <li>
-      <Link href="/">Home</Link>
-    </li>
-    <li>
-      <Link href="/aboutme">About me</Link>
-    </li>
-    <li>
-      <Link href="/prices">Prices</Link>
-    </li>
-    <li>
-      <Link href="/contact">Contact</Link>
-    </li>
-    <li>
-      <Sessionbtn />
-    </li>
-  </ul>
+  <MenuSty>
+    <ALink href="/">Home</ALink>
+    <ALink href="/aboutme">About me</ALink>
+    <ALink href="/prices">Prices</ALink>
+    <ALink href="/contact">Contact</ALink>
+    <Sessionbtn />
+  </MenuSty>
 );
 
 export default Menu;

@@ -18,4 +18,9 @@ export const mutate = async(resource, body) => {
   return res.data;
 };
 
+// export const privateMutate = async(resource, body) => {
+//   const res = await frontApi.post(resource, body);
+//   return res.data;
+// };
+
 export default fetcher;

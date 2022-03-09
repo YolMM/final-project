@@ -16,7 +16,6 @@ const Prices = () => {
           <td>{prices.size}</td>
           <td>{prices.printed}</td>
           <td>{prices.price}</td>
-          <td><button type="button" onClick={(e) => console.log(e)}>Select</button></td>
         </tr>
       ))}
     </div>

@@ -13,7 +13,7 @@ const Store = createStore({
     errors: {
       userName: true,
       email: true,
-      rate: true,
+      rate: false,
       comment: true,
     },
   },
@@ -21,7 +21,6 @@ const Store = createStore({
     updateUsername: (userName) => ({ setState, getState }) => {
       const currentReview = getState().review;
       const currentErrors = getState().errors;
-      console.log(userName);
 
       const valid = Yup.string().required().isValidSync(userName);
       if (!valid) {
@@ -39,7 +38,6 @@ const Store = createStore({
     updateEmail: (email) => ({ setState, getState }) => {
       const currentReview = getState().review;
       const currentErrors = getState().errors;
-      console.log(email);
 
       const valid = Yup.string().email().isValidSync(email);
       if (!valid) {
@@ -57,13 +55,11 @@ const Store = createStore({
     updateRate: (rate) => ({ setState, getState }) => {
       const currentReview = getState().review;
       const currentErrors = getState().errors;
-      console.log(rate);
 
       const valid = Yup.number().min(1).max(5).isValidSync(rate);
       if (!valid) {
         setState({
           review: { ...currentReview },
-          errors: { ...currentErrors, rate: true },
         });
       } else {
         setState({
@@ -75,7 +71,6 @@ const Store = createStore({
     updateComment: (comment) => ({ setState, getState }) => {
       const currentReview = getState().review;
       const currentErrors = getState().errors;
-      console.log(comment);
 
       const valid = Yup.string().required().isValidSync(comment);
       if (!valid) {
@@ -93,7 +88,6 @@ const Store = createStore({
     sendReview: () => ({ setState, getState }) => {
       const currentReview = getState().review;
       const currentErrors = getState().errors;
-      console.log(currentErrors);
 
       // eslint-disable-next-line max-len
       if (currentErrors.userName || currentErrors.email || currentErrors.rate || currentErrors.comment) {

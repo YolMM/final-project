@@ -23,7 +23,6 @@ const Store = createStore({
       if (!valid) {
         setState({
           prices: { ...currentphotoPack },
-          errors: { ...currentErrors, quantity: true },
         });
       } else {
         setState({
