@@ -7,13 +7,13 @@ export const StyleDiv = styled.div`
 margin: 0px:
 padding: 0px;
 background-color: #EEF6F7;
+font-size: 16px;
 font-family: Arial, Helvetica, sans-serif;
 `;
 
 // Forms
 export const FlexDiv = styled.div`
-margin: 0px;
-padding: 60px;
+padding: 30px;
 background-color: #F5F0EA;
 display: flex;
 flex-direction: column;
@@ -24,8 +24,36 @@ export const FormDiv = styled.div`
 margin: 10px;
 max-width: 200px;
 display: flex;
-flex-direction: column;
+flex-direction: column; 
 justify-content: center;
+`;
+
+// Pages
+export const PagesSty = styled.div`
+padding: 30px;
+background-color: #F5F0EA;
+display: flex;
+flex-direction: column;
+align-items: center;
+`;
+
+// Gallery
+export const GallerySty = styled.div`
+margin: 30px;
+display: flex;
+flex-flow: row wrap;
+justify-content: space-evenly;
+`;
+
+export const CenteredPh = styled.div`
+display: flex;
+align-items: center;
+`;
+
+export const PhotoWork = styled.img`
+margin: 0px 30px 40px 20px;
+width: 700px;
+height: auto;
 `;
 
 // Menu
@@ -100,6 +128,7 @@ align-items: center;
 
 export const ReviewDiv = styled.div`
 margin-top: 40px;
+margin-bottom: 60px;
 padding: 1px;
 display: flex;
 flex-flow: row wrap;
@@ -151,6 +180,45 @@ flex-direction: column;
 align-items: center;
 `;
 
+// About me
+export const JDInfo = styled.div`
+margin-top: 60px;
+padding: 30px;
+max-width: 80rem;
+display: flex;
+`;
+
+export const JDPic = styled.img`
+margin: 0px 30px 40px 20px;
+width: 500px;
+height: auto;
+`;
+
+// Prices
+export const PricesInp = styled.div`
+margin: 20px 10px 10px 0px;
+`;
+
+export const PricesTable = styled.table`
+margin: 10px;
+padding: 10px 20px;
+border-radius: 6px;
+border: 2px solid #428077;
+max-width: 600px;
+text-align: center;
+background-color: #D3DEDC;
+box-shadow: 1px 3px 5px 1px rgba(0,0,0,0.2), 1px 3px 5px 1px rgba(0,0,0,0.19);
+`;
+
+export const TableTitle = styled.th`
+padding: 10px;
+text-decoration: underline #428077;
+`;
+
+export const TableElem = styled.td`
+padding: 10px;
+`;
+
 // Inputs
 
 export const FormInput = styled.input`
@@ -200,6 +268,6 @@ export const H1 = styled.h1`
     font-size: 3rem;
 `;
 
-export const H2 = styled.h1`
+export const H2 = styled.h2`
     font-size: 2rem;
 `;

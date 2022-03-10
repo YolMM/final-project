@@ -1,5 +1,6 @@
 import React from 'react';
 import useSWR from 'swr';
+import { PricesTable, TableElem, TableTitle } from './style/Style';
 
 const Prices = () => {
   const { data, error } = useSWR('/prices');
@@ -8,17 +9,24 @@ const Prices = () => {
   if (!data) return <div>We couldn't find anything. Sorry :(</div>;
 
   return (
-    <div>
+    <PricesTable>
+      <tr>
+        <TableTitle>Pack</TableTitle>
+        <TableTitle>Photo's quantity</TableTitle>
+        <TableTitle>Photos' size</TableTitle>
+        <TableTitle>Printed</TableTitle>
+        <TableTitle>Price</TableTitle>
+      </tr>
       {data.map((prices) => (
         <tr>
-          <td>{prices.packName}</td>
-          <td>{prices.quantity}</td>
-          <td>{prices.size}</td>
-          <td>{prices.printed}</td>
-          <td>{prices.price}</td>
+          <TableElem>{prices.packName}</TableElem>
+          <TableElem>{prices.quantity}</TableElem>
+          <TableElem>{prices.size}</TableElem>
+          <TableElem>{(prices.printed) ? 'Yes' : 'No'}</TableElem>
+          <TableElem>{prices.price} €</TableElem>
         </tr>
       ))}
-    </div>
+    </PricesTable>
   );
 };
 

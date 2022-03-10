@@ -1,6 +1,9 @@
 import React from 'react';
 import useSWR from 'swr';
-import { Card, H2, ProfPic, ReviewDiv, ReviewSty } from './style/Style';
+import InputReview from './forms/InputReview';
+import {
+  Card, H2, ProfPic, ReviewDiv, ReviewSty,
+} from './style/Style';
 
 const Review = () => {
   const { data } = useSWR('/reviews');
@@ -22,6 +25,8 @@ const Review = () => {
           </Card>
         ))}
       </ReviewDiv>
+      <H2>Leave a review!</H2>
+      <InputReview />
     </ReviewSty>
   );
 };

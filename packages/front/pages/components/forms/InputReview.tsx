@@ -1,7 +1,8 @@
 import React from 'react';
 import { useReview } from '../../../lib/stores/useReview';
-// eslint-disable-next-line object-curly-newline
-import { Button, Comment, FlexDiv, FormInput, FormDiv } from '../style/Style';
+import {
+  Button, Comment, FlexDiv, FormInput, FormDiv,
+} from '../style/Style';
 
 const InputReview = () => {
   const [state, actions] = useReview();

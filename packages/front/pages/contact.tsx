@@ -1,14 +1,19 @@
 import React from 'react';
-import { ALink } from './components/style/Style';
+import {
+  ALink, Button, CenteredPh, H2, JDPic, PagesSty,
+} from './components/style/Style';
 
 const Contact = () => (
-  <div>
-    <h2>Contact me!</h2>
+  <PagesSty>
+    <H2>Contact me!</H2>
+    <CenteredPh>
+      <JDPic src="/johndoe/photowork2.jpg" alt="John" />
+    </CenteredPh>
     <div>
       <p>Let's talk about what can I offer to you:</p>
-      <ALink href="/appointments">Click here</ALink>
+      <ALink href="/appointments"><Button type="button">Click here</Button></ALink>
     </div>
-  </div>
+  </PagesSty>
 );
 
 export default Contact;

@@ -1,9 +1,10 @@
 import React from 'react';
 import Image from 'next/image';
-import InputReview from './components/forms/InputReview';
 import Review from './components/Review';
 import Photos from './components/Photos';
-import { H1, Header, Title, WelcomeImg } from './components/style/Style';
+import {
+  H1, Header, Title, WelcomeImg,
+} from './components/style/Style';
 
 const IndexPage = () => (
   <div>
@@ -21,9 +22,6 @@ const IndexPage = () => (
     </div>
     <div>
       <Review />
-    </div>
-    <div>
-      <InputReview />
     </div>
   </div>
 );

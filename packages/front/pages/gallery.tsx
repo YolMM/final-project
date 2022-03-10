@@ -1,7 +1,10 @@
 import React from 'react';
 import useSWR from 'swr';
-import Image from 'next/image';
 import { useRouter } from 'next/router';
+import {
+  PagesSty,
+  CenteredPh, GallerySty, H2, PhotoWork,
+} from './components/style/Style';
 
 const Gallery = () => {
   const { data } = useSWR('/photos');
@@ -16,18 +19,18 @@ const Gallery = () => {
   return (
     <div>
       {filtered.map((photos) => (
-        <div>
+        <PagesSty>
           <div>
-            <h3>{photos.name}</h3>
+            <H2>{photos.name}</H2>
           </div>
-          <div>
+          <GallerySty>
             {photos.images.map((ph) => (
-              <div>
-                <Image src={ph} alt="photo" width="300" height="200" />
-              </div>
+              <CenteredPh>
+                <PhotoWork src={ph} alt="photo" />
+              </CenteredPh>
             ))}
-          </div>
-        </div>
+          </GallerySty>
+        </PagesSty>
       ))}
     </div>
   );

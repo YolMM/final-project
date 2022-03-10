@@ -1,6 +1,8 @@
 import React from 'react';
 import useSWR from 'swr';
-import { Button, H2, PhotoName, PhotosDiv, PhotosSty, Pic } from './style/Style';
+import {
+  Button, H2, PhotoName, PhotosDiv, PhotosSty, Pic,
+} from './style/Style';
 
 const Photos = () => {
   const { data } = useSWR('/photos');
