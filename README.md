@@ -42,7 +42,7 @@ The project is a monorepo and its structure is:
 ```
 final-project
     │
-    |   packages/
+    ├──packages/
     |    ├── api/
     │    |    ├── src/
     |    |    ├── tsconfig.json
