@@ -3,13 +3,19 @@ import Image from 'next/image';
 import InputReview from './components/forms/InputReview';
 import Review from './components/Review';
 import Photos from './components/Photos';
+import { H1, Header, Title, WelcomeImg } from './components/style/Style';
 
 const IndexPage = () => (
   <div>
-    <div>
-      <h2>JD Photography</h2>
-      <Image src="/logo.jpg" alt="logo" width="64" height="64" />
-    </div>
+    <Header>
+      <Title>
+        <Image src="/logo.png" alt="logo" width="120" height="90" />
+        <H1>JD Photography</H1>
+      </Title>
+      <WelcomeImg>
+        <Image src="/welcome.jpg" alt="wlcm-img" width="1350" height="700" />
+      </WelcomeImg>
+    </Header>
     <div>
       <Photos />
     </div>

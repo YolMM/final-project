@@ -44,25 +44,23 @@ final-project
     │
     |   packages/
     |    ├── api/
-    │    |    ├── public/
     │    |    ├── src/
-    │    |    ├── routers/
-    │    |    ├── scripts/
-    │    |    ├── app.ts
-    │    |    ├── config.ts
-    │    |    ├── server.ts
+    |    |    ├── tsconfig.json
     │    |    └── package.json
     |    |
     |    └── front/
+    |         ├── lib/
     |         ├── pages/
-    |         └── package.json
+    │         ├── public/
+    |         ├── package.json
+    |         ├── tailwind.config.js
+    |         └── tsconfig.json
     │
     ├── .eslintrc.json
     ├── .gitignore
     ├── lerna.json
     ├── package.json
-    ├── README.md
-    └── tsconfig.json
+    └── README.md
 ```
 
 ### 3.2. API
@@ -140,7 +138,7 @@ final-project
     | parcel     | fastify      | axios         |
     | react      | fastify-cors | eslint        |
     | swr        | lodash       | lerna         |
-    |            | mongoose     | typescript    |
+    | yup        | mongoose     | typescript    |
     |            | nodemon      | yarn          |
     |            | pino         |               |
     |            | pino-pretty  |               |
@@ -156,12 +154,13 @@ final-project
 - Mongoose [docs](https://mongoosejs.com/docs/)
 - [Next.js](https://nextjs.org/)
 - [React](https://es.reactjs.org/)
+- [yup](https://www.npmjs.com/package/yup)
 
 ##  6. <a name='Acknowledgements'></a> Acknowledgements
 
 To the people of CORE Code School, specially my teacher Marcos and all my colleagues, for doing this possible.
 
-To my sister for motivate this project.
+To my family for all the motivation and support.
 
 ##  7. <a name='License'></a> License
 

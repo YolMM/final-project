@@ -1,11 +1,20 @@
 import styled from 'styled-components';
 
 // Divs
+
+// *
+export const StyleDiv = styled.div`
+margin: 0px:
+padding: 0px;
+background-color: #EEF6F7;
+font-family: Arial, Helvetica, sans-serif;
+`;
+
 // Forms
 export const FlexDiv = styled.div`
 margin: 0px;
 padding: 60px;
-background-color: #FBD8B3;
+background-color: #F5F0EA;
 display: flex;
 flex-direction: column;
 align-items: center;
@@ -14,25 +23,99 @@ align-items: center;
 export const FormDiv = styled.div`
 margin: 10px;
 max-width: 200px;
-background-color: #EEF6F7;
 display: flex;
 flex-direction: column;
 justify-content: center;
 `;
 
+// Menu
+export const MenuSty = styled.div`
+padding: 30px;
+background: linear-gradient(45deg, #bc1888 0%,#cc2366 25%,#dc2743 50%,#e6683c 75%,#f09433 100%);
+display: flex;
+justify-content: space-evenly;
+align-items: baseline;
+`;
+
+// Header
+export const Header = styled.div`
+padding: 30px;
+background-color: #F5F0EA;
+display: flex;
+flex-direction: column;
+`;
+
+export const Title = styled.div`
+margin-bottom: 100px;
+padding-top: 30px;
+display: flex;
+flex-flow: row nowrap;
+justify-content: center;
+`;
+
+export const WelcomeImg = styled.div`
+display: flex;
+justify-content: center;
+`;
+
+// Photos
+export const PhotosSty = styled.div`
+padding: 120px;
+background-color: #F5F0EA;
+display: flex;
+flex-direction: column;
+align-items: center;
+`;
+
+export const PhotosDiv = styled.div`
+padding-top: 40px;
+font-size: 16px;
+display: flex;
+flex-flow: row wrap;
+justify-content: space-evenly;
+`;
+
+export const Pic = styled.img`
+margin-top: 30px;
+width: 700px;
+height: auto;
+`;
+
+export const PhotoName = styled.div`
+margin-top: 10px;
+margin-bottom: 60px;
+display: flex; 
+flex-direction: column;
+align-items: center;
+`;
+
 // Reviews
 export const ReviewSty = styled.div`
 padding: 1px;
+background-color: #F5F0EA;
+display: flex; 
+flex-direction: column;
+align-items: center;
+`;
+
+export const ReviewDiv = styled.div`
+margin-top: 40px;
+padding: 1px;
+display: flex;
+flex-flow: row wrap;
+justify-content: space-evenly;
 `;
 
 export const Card = styled.div`
-margin: 5px;
-padding: 10px;
-border-radius: 2px;
-background-color: #D07D59;
-box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2), 0 2px 4px 0 rgba(0,0,0,0.19);
+margin: 10px;
+padding: 10px 20px;
+border-radius: 6px;
+background-color: #428077;
+max-width: 500px;
+box-shadow: 1px 3px 5px 1px rgba(0,0,0,0.2), 1px 3px 5px 1px rgba(0,0,0,0.19);
+color: black;
 display: flex;
-
+align-items: center;
 `;
 
 export const ProfPic = styled.img`
@@ -42,26 +125,20 @@ border: 1px;
 border-style: solid;
 border-color: #453A68;
 width: 150px;
-`;
-
-// Menu
-export const MenuSty = styled.div`
-padding: 30px;
-background-color: #FBD8B3;
-display: flex;
-justify-content: space-evenly;
-align-items: baseline;
+height: 150px;
 `;
 
 // Footer
 export const FooterSty = styled.footer`
 margin: 0px;
 padding: 50px;
-background-color: #EEF6F7;
+max-width: 200rem;
+background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
 `;
 
 export const FootLinks = styled.div`
-margin-bottom: 30px;
+margin-bottom: 130px;
+padding-top: 50px;
 display: flex;
 justify-content: space-evenly;
 align-items: baseline;
@@ -78,14 +155,19 @@ align-items: center;
 
 export const FormInput = styled.input`
 margin: 2px;
-border: 0.5px;
+border: 1px;
 border-radius: 2px;
+border-style: solid;
+border-color: #428077;
+font-size: 16px;
 box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2), 0 2px 4px 0 rgba(0,0,0,0.19);
 `;
 
 export const Comment = styled.input`
 margin: 2px;
-border: 0.5px;
+border: 1px;
+border-style: solid;
+border-color: #428077;
 height: 80px;
 width: 300px;
 border-radius: 2px;
@@ -100,7 +182,7 @@ border: 1px;
 border-radius: 8px;
 border-color: #D4C6A8;
 background-color: #B53F49;
-font-size: 14px;
+font-size: 16px;
 color: #FCFFFE;
 box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2), 0 2px 4px 0 rgba(0,0,0,0.19);
 `;
@@ -109,6 +191,15 @@ box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2), 0 2px 4px 0 rgba(0,0,0,0.19);
 
 export const ALink = styled.a`
 text-decoration: none;
-color: #453A68;
-text-shadow: 0.5px 1px #A5A79A;
+color: #fff;
+`;
+
+// h
+
+export const H1 = styled.h1`
+    font-size: 3rem;
+`;
+
+export const H2 = styled.h1`
+    font-size: 2rem;
 `;

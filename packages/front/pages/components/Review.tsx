@@ -1,6 +1,6 @@
 import React from 'react';
 import useSWR from 'swr';
-import { Card, ProfPic, ReviewSty } from './style/Style';
+import { Card, H2, ProfPic, ReviewDiv, ReviewSty } from './style/Style';
 
 const Review = () => {
   const { data } = useSWR('/reviews');
@@ -9,16 +9,19 @@ const Review = () => {
   }
   return (
     <ReviewSty>
-      {data.map((reviews) => (
-        <Card key={reviews.id}>
-          <ProfPic src={reviews.profilePic} alt="Profile pic" />
-          <div>
-            <p>{reviews.userName}</p>
-            <p>{reviews.rate}</p>
-            <p>{reviews.comment}</p>
-          </div>
-        </Card>
-      ))}
+      <H2>Customers' reviews</H2>
+      <ReviewDiv>
+        {data.map((reviews) => (
+          <Card key={reviews.id}>
+            <ProfPic src={reviews.profilePic} alt="Profile pic" />
+            <div>
+              <p>{reviews.userName}</p>
+              <p>{'⭐'.repeat(reviews.rate)}{'★'.repeat(5 - reviews.rate)}</p>
+              <p>{reviews.comment}</p>
+            </div>
+          </Card>
+        ))}
+      </ReviewDiv>
     </ReviewSty>
   );
 };

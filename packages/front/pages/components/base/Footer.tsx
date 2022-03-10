@@ -6,7 +6,7 @@ const Footer = () => (
   <FooterSty>
     <div>
       <FootLinks>
-        <ALink href="/">Find the studio</ALink>
+        <ALink href="https://moon.google.com" target="_blank">Find the studio</ALink>
         <ALink href="/aboutme">About me</ALink>
         <ALink href="/contact">Contact</ALink>
       </FootLinks>

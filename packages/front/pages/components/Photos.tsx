@@ -1,7 +1,6 @@
 import React from 'react';
 import useSWR from 'swr';
-import Image from 'next/image';
-import { Button } from './style/Style';
+import { Button, H2, PhotoName, PhotosDiv, PhotosSty, Pic } from './style/Style';
 
 const Photos = () => {
   const { data } = useSWR('/photos');
@@ -10,20 +9,23 @@ const Photos = () => {
   }
 
   return (
-    <div>
-      {data.map((photos) => {
-        const url = `/gallery?filter=${photos.name}`;
-        return (
-          <div>
-            <Image src={photos.images[0]} alt="photo" width="300" height="200" />
-            <div>{photos.name}</div>
+    <PhotosSty>
+      <H2>See some of my work ↓</H2>
+      <PhotosDiv>
+        {data.map((photos) => {
+          const url = `/gallery?filter=${photos.name}`;
+          return (
             <div>
-              <a href={url}><Button type="button">See more</Button></a>
+              <Pic src={photos.images[0]} alt="photo" />
+              <PhotoName>
+                <div>{photos.name}</div>
+                <a href={url}><Button type="button">See more</Button></a>
+              </PhotoName>
             </div>
-          </div>
-        );
-      })}
-    </div>
+          );
+        })}
+      </PhotosDiv>
+    </PhotosSty>
   );
 };
 
