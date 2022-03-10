@@ -8,18 +8,21 @@ import {
 const Review = () => {
   const { data } = useSWR('/reviews');
   if (!data) {
-    return <div>We couldn't find any review. Sorry :(</div>;
+    return <div>We couldn&apos;t find any review. Sorry :(</div>;
   }
   return (
     <ReviewSty>
-      <H2>Customers' reviews</H2>
+      <H2>Customers&apos; reviews</H2>
       <ReviewDiv>
-        {data.map((reviews) => (
+        {data.map((reviews: any) => (
           <Card key={reviews.id}>
             <ProfPic src={reviews.profilePic} alt="Profile pic" />
             <div>
               <p>{reviews.userName}</p>
-              <p>{'⭐'.repeat(reviews.rate)}{'★'.repeat(5 - reviews.rate)}</p>
+              <p>
+                {'⭐'.repeat(reviews.rate)}
+                {'★'.repeat(5 - reviews.rate)}
+              </p>
               <p>{reviews.comment}</p>
             </div>
           </Card>

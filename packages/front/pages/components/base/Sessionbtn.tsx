@@ -2,7 +2,7 @@ import React from 'react';
 import { useUser } from '@auth0/nextjs-auth0';
 import { ALink, Button } from '../style/Style';
 
-export const Sessionbtn = () => {
+const Sessionbtn = () => {
   const { user } = useUser();
 
   let sessionButton;
@@ -24,3 +24,5 @@ export const Sessionbtn = () => {
     <div>{sessionButton}</div>
   );
 };
+
+export default Sessionbtn;

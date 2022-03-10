@@ -7,14 +7,14 @@ import {
 const Photos = () => {
   const { data } = useSWR('/photos');
   if (!data) {
-    return <div>We couldn't find anything. Sorry :(</div>;
+    return <div>We couldn&apos;t find anything. Sorry :(</div>;
   }
 
   return (
     <PhotosSty>
       <H2>See some of my work ↓</H2>
       <PhotosDiv>
-        {data.map((photos) => {
+        {data.map((photos: any) => {
           const url = `/gallery?filter=${photos.name}`;
           return (
             <div>

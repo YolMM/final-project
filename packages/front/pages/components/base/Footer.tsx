@@ -1,6 +1,7 @@
 import React from 'react';
-// eslint-disable-next-line object-curly-newline
-import { ALink, FooterSty, FootLinks, FootP } from '../style/Style';
+import {
+  ALink, FooterSty, FootLinks, FootP,
+} from '../style/Style';
 
 const Footer = () => (
   <FooterSty>

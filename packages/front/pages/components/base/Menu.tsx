@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sessionbtn } from './Sessionbtn';
+import Sessionbtn from './Sessionbtn';
 import { ALink, MenuSty } from '../style/Style';
 
 const Menu = () => (

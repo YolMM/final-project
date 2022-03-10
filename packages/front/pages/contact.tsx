@@ -10,7 +10,7 @@ const Contact = () => (
       <JDPic src="/johndoe/photowork2.jpg" alt="John" />
     </CenteredPh>
     <div>
-      <p>Let's talk about what can I offer to you:</p>
+      <p>Let&apos;s talk about what can I offer to you:</p>
       <ALink href="/appointments"><Button type="button">Click here</Button></ALink>
     </div>
   </PagesSty>

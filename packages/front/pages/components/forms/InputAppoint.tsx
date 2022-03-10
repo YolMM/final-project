@@ -13,7 +13,7 @@ const InputAppoint = () => {
         <FormDiv>
           <FormInput value={state.appointment.user} onChange={(e) => (actions.updateUser(e.target.value))} required placeholder="Name" />
           <FormInput value={state.appointment.email} onChange={(e) => (actions.updateEmail(e.target.value))} required placeholder="Email" />
-          <FormInput type="date" value={state.appointment.date} onChange={(e) => (actions.updateDate(e.target.value))} required />
+          <FormInput type="date" onChange={(e) => (actions.updateDate(e.target.value))} required />
         </FormDiv>
         <Button onClick={() => actions.sendAppoint()} type="button">Make appointment</Button>
       </FlexDiv>

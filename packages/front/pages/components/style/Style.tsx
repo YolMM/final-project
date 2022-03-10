@@ -3,13 +3,15 @@ import styled from 'styled-components';
 // Divs
 
 // *
-export const StyleDiv = styled.div`
+const StyleDiv = styled.div`
 margin: 0px:
 padding: 0px;
 background-color: #EEF6F7;
 font-size: 16px;
 font-family: Arial, Helvetica, sans-serif;
 `;
+
+export default StyleDiv;
 
 // Forms
 export const FlexDiv = styled.div`

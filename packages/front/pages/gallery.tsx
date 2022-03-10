@@ -9,22 +9,22 @@ import {
 const Gallery = () => {
   const { data } = useSWR('/photos');
   if (!data) {
-    return <div>We couldn't find anything. Sorry :(</div>;
+    return <div>We couldn&apos;t find anything. Sorry :(</div>;
   }
 
   const { query } = useRouter();
 
-  const filtered = data.filter((e) => e.name === query.filter);
+  const filtered = data.filter((e: any) => e.name === query.filter);
 
   return (
     <div>
-      {filtered.map((photos) => (
+      {filtered.map((photos: any) => (
         <PagesSty>
           <div>
             <H2>{photos.name}</H2>
           </div>
           <GallerySty>
-            {photos.images.map((ph) => (
+            {photos.images.map((ph: any) => (
               <CenteredPh>
                 <PhotoWork src={ph} alt="photo" />
               </CenteredPh>
