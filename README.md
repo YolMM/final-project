@@ -1,4 +1,4 @@
-# FINAL PROJECT 📷
+# JD Photography 📷
 
 <p align="center">
 	<img src="packages/front/public/1794.jpg" alt="logo" width="150"/>
